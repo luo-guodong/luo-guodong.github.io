@@ -152,47 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hhhhh-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/04/hhhhh-md/">hhhhh.md</a>
+      <a class="article-title" href="/2022/08/05/Git/">Git.md</a>
     </h1>
   
 
         
-        <a href="/2022/08/04/hhhhh-md/" class="archive-article-date">
-  	<time datetime="2022-08-04T12:28:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
+        <a href="/2022/08/05/Git/" class="archive-article-date">
+  	<time datetime="2022-08-05T07:49:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="hello-markdown"><a href="#hello-markdown" class="headerlink" title="hello markdown"></a>hello markdown</h1><h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><p>Love <strong>is</strong> bold</p>
-<blockquote>
-<p>git clone 引用段落</p>
-<ul>
-<li>git clone 引用段落</li>
-<li>git clone 引用段落</li>
-</ul>
+        <p>[TOC]</p>
+<h2 id="1-配置用户信息"><a href="#1-配置用户信息" class="headerlink" title="1.配置用户信息"></a>1.配置用户信息</h2><p>如果是第一下使用git，需要先配置好user.name和user.email</p>
+<h3 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h3><blockquote>
+<p>git config –list</p>
 </blockquote>
-<p><code>git clone<code></p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
-<hr>
-<hr>
-<p><a target="_blank" rel="noopener" href="https://www.baidu.com/">baidu</a><br><img src="/img/1141311.jpg" alt="这是图片"><br>4 &lt; 5<br>4 &lt; 5</p>
-<p>This is a regular paragraph.</p>
-<table>
-    <tr>
-        <td>Foo</td>
-    </tr>
-</table>
-
-<p>This is another regular paragraph.</p>
+<p>在这里可以查看到自己的user.name和user.email</p>
+<h3 id="配置-user-name和user-email"><a href="#配置-user-name和user-email" class="headerlink" title="配置 user.name和user.email"></a>配置 user.name和user.email</h3><blockquote>
+<p>git config –global user.name “xxx”</p>
+<p>git config –global user.email “xxx”</p>
+</blockquote>
+<p>配置完后可以使用git config –list 查看信息是否配置好</p>
+<h2 id="2-新建仓库"><a href="#2-新建仓库" class="headerlink" title="2.新建仓库"></a>2.新建仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><blockquote>
+<p>git init [name]</p>
+</blockquote>
+<h3 id="拉取远程仓库"><a href="#拉取远程仓库" class="headerlink" title="拉取远程仓库"></a>拉取远程仓库</h3><blockquote>
+<p>git clone 仓库地址</p>
+</blockquote>
+<h2 id="3-文件添加到暂存区"><a href="#3-文件添加到暂存区" class="headerlink" title="3.文件添加到暂存区"></a>3.文件添加到暂存区</h2><h3 id="添加所有文件"><a href="#添加所有文件" class="headerlink" title="添加所有文件"></a>添加所有文件</h3><blockquote>
+<p>git add .</p>
+</blockquote>
+<h3 id="添加指定文件"><a href="#添加指定文件" class="headerlink" title="添加指定文件"></a>添加指定文件</h3><blockquote>
+<p>git add [file]/[dir]</p>
+<p>ps: 如果是dir的话就是添加文件夹下所有文件</p>
+</blockquote>
+<h2 id="4-提交"><a href="#4-提交" class="headerlink" title="4.提交"></a>4.提交</h2><blockquote>
+<p>git commit -m ‘message’</p>
+<p>ps: -m 表示提交时附带的信息，一般是对本次提交的一些修改说明</p>
+</blockquote>
+<p>只有commit提交后文件才会从暂存区保存到git仓库</p>
+<h2 id="5-推送到远程仓库"><a href="#5-推送到远程仓库" class="headerlink" title="5.推送到远程仓库"></a>5.推送到远程仓库</h2><blockquote>
+<p>git push</p>
+</blockquote>
+<p>​    ps: 如果仓库没有绑定远程仓库，需要绑定远程仓库才可以推送</p>
+<h3 id="绑定远程仓库"><a href="#绑定远程仓库" class="headerlink" title="绑定远程仓库"></a>绑定远程仓库</h3><blockquote>
+<p>git remote add [shortname] 远程仓库地址url</p>
+</blockquote>
+<h2 id="6-github-免密码推送（SSH方式）"><a href="#6-github-免密码推送（SSH方式）" class="headerlink" title="6.github 免密码推送（SSH方式）"></a>6.github 免密码推送（SSH方式）</h2><h3 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h3><blockquote>
+<p>ssh-keygen -t rsa </p>
+</blockquote>
+<p>执行后提示输入信息，可以直接enter</p>
+<p>生成的ssh key 会保存在 用户目录的 C:\Users\xx.ssh 的id_rsa.pub文件，可以使用cat命令查看内容</p>
+<blockquote>
+<p>cat C:/Users/xx/.ssh/id_rsa.pub</p>
+</blockquote>
+<p>在GitHub个人主页中，点击右上角的头像旁的下拉标签，打开setting。找到SSH and GPG keys 选择 New SSH key</p>
+<p>在 key 文本框中输入刚才生成的ssh key ,title可以随便写</p>
+<p><img src="./public/img/img1.png" alt="img1"></p>
+<h4 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h4><blockquote>
+<p>ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a></p>
+</blockquote>
+<p>成功会输出一下内容</p>
+<blockquote>
+<p>Hi [你的username]! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
 
       
 
@@ -201,11 +234,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">git常用命令</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/04/hhhhh-md/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/05/Git/">展开全文 >></a>
         </p>
       
 
@@ -401,6 +445,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">git常用命令</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
