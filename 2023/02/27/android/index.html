@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: git常用命令 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="嵌入式技能大赛 Android平台程序基础入门开发环境搭建 安装Android Stuio  配置SDK和NDK     使用Android Stuio打开项目后，点击File -&gt; Project Structure -&gt; SDK Location 即可设置SDK和NDK目录，当然因为是java开发，jdk目录也少不了，也可此对话框设置，jdk可以在oracle官网自行下载。（SDK">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:url" content="http://example.com/2023/02/27/android/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="嵌入式技能大赛 Android平台程序基础入门开发环境搭建 安装Android Stuio  配置SDK和NDK     使用Android Stuio打开项目后，点击File -&gt; Project Structure -&gt; SDK Location 即可设置SDK和NDK目录，当然因为是java开发，jdk目录也少不了，也可此对话框设置，jdk可以在oracle官网自行下载。（SDK">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo1.png">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo2.png">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo3.png">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo4.png">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo5.png">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo6.png">
+<meta property="og:image" content="http://example.com/2023/02/27/android/img/android/photo7.png">
+<meta property="article:published_time" content="2023-02-27T09:02:17.530Z">
+<meta property="article:modified_time" content="2023-03-04T11:42:17.765Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/02/27/android/img/android/photo1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -142,60 +154,247 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-android" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="嵌入式技能大赛-Android平台程序基础入门"><a href="#嵌入式技能大赛-Android平台程序基础入门" class="headerlink" title="嵌入式技能大赛 Android平台程序基础入门"></a>嵌入式技能大赛 Android平台程序基础入门</h1><h2 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h2><ul>
+<li><p>安装Android Stuio</p>
+</li>
+<li><p>配置SDK和NDK </p>
+</li>
+</ul>
+<ol>
+<li><p>使用Android Stuio打开项目后，点击File -&gt; Project Structure -&gt; SDK Location 即可设置SDK和NDK目录，当然因为是java开发，jdk目录也少不了，也可此对话框设置，jdk可以在oracle官网自行下载。（SDK和NDK包可以在提供的资料中获取）</p>
+<p><img src="./img/android/photo1.png" alt="image"></p>
+</li>
+<li><p>在local.properties中修改ndk、sdk的路径为自己的路径，像这样：(注意转义字符)</p>
+<p><img src="./img/android/photo2.png"></p>
+</li>
+</ol>
+<ul>
+<li><p>配置opencv</p>
+<ol>
+<li><p>使用openCV的android库需要在app模块下的CMakeList.txt中配置opencv库的路径：</p>
+<p><img src="./img/android/photo3.png"></p>
+</li>
+<li><p> CMakeList是CMake用于构建项目的配置文件，他就像我们学习C语言时用到的make工具中的makefile一样，而CMake和Android开发中常常用到的Gradle一样都是一个工程构建的工具，不过CMake是一个跨平台的构建工具，而Gradle多用于Android工程或其他Java工程。所以，我们需要下载CMake,这个在android studio就可以下载，点击 菜单上的Tools -&gt; SDK Manager -&gt; SDK Tools 找到CMake即可下载</p>
+</li>
+</ol>
+<p>   <img src="./img/android/photo4.png"></p>
+</li>
+<li><p>根据所用Android设备在SDK Platforms中下载合适的Android版本</p>
+<p><img src="./img/android/photo5.png"></p>
+</li>
+<li><p>配置好以上的环境后，可以Build一下项目，看看有没有问题，遇到问题可以在网上寻找一下答案，作者初学时也遇到了一些问题，不过基本上可以在网上找到答案并解决问题。</p>
+</li>
+</ul>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ul>
+<li><p>打开源码目录下src-&gt;main-&gt;java主要有一下的几个包</p>
+<p><img src="./img/android/photo6.png"></p>
+<p>从上往下，依次是</p>
+<ul>
+<li>android.serialport : 里面封装了一些识别目标时和输出调试信息的工具类等</li>
+<li>car.bkrc  : 这个包主要是app的Activity组件和ui组件</li>
+<li>car2017_demo:这个包中的connect_transport类是我们平时主要改动的类，该类封装的方法会在与小车通信时发送指令过来时，执行相应的方法。</li>
+<li>com.bkrc.camera: 这个包是小车相机相关的信息，通常不需改动</li>
+<li>right.fragment.recycleview.data: 改包是app中相关的适配器，里面主要负责app手动操作时进行的方法调用。</li>
+<li>ui.bkrc.ui: app 的ui组件</li>
+</ul>
+</li>
+<li><p>Android设备与竞赛平台的通信</p>
+<ol>
+<li></li>
+</ol>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">Thread</span> <span class="variable">reThread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// TODO Auto1-generated method stub</span></span><br><span class="line">        <span class="keyword">while</span> (socket != <span class="literal">null</span> &amp;&amp; !socket.isClosed()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Firstdestroy == <span class="literal">true</span>)  <span class="comment">//Firstactivity 已销毁了</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                bInputStream.read(rbyte);</span><br><span class="line">                Log.e(rbyte.toString(), rbyte[<span class="number">0</span>]+<span class="string">&quot;******&quot;</span> + rbyte.toString());</span><br><span class="line">                Log.e(<span class="string">&quot;数据帧&quot;</span>,Arrays.toString(rbyte));</span><br><span class="line">                <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">                msg.what = <span class="number">1</span>;</span><br><span class="line">                msg.obj = rbyte;</span><br><span class="line">                reHandler.sendMessage(msg);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+<p>​         在connect_transport类用这样的一个线程成员属性，该线程会在某个组件的onCreateView生命周期中唤醒该线程，这个线程是负责将竞赛平台发送的指令(指令的数据格式是与竞赛平台约定好的)储存到rbyte这个缓冲区中，通过Handle机制将rbyte缓冲区数据打包，发送给handle,从而让要使用的程序可以获取到它。通过接收竞赛平台发送的指令，andriod平台执行对应操作。</p>
+<ol start="2">
+<li><p>在android平台完成了某些操作后，如二维码的识别，通常会将一些数据返回给竞赛平台也就是小车，让其进行任务的下一步操作。发送数据的流程如下:</p>
+<ul>
+<li>利用connect_tranport的成员属性组成通信协议中的数据帧</li>
+</ul>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">short</span> <span class="variable">TYPE</span> <span class="operator">=</span> <span class="number">0xAA</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="type">short</span> <span class="variable">MAJOR</span> <span class="operator">=</span> <span class="number">0x00</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="type">short</span> <span class="variable">FIRST</span> <span class="operator">=</span> <span class="number">0x00</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="type">short</span> <span class="variable">SECOND</span> <span class="operator">=</span> <span class="number">0x00</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="type">short</span> <span class="variable">THRID</span> <span class="operator">=</span> <span class="number">0x00</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="type">short</span> <span class="variable">CHECKSUM</span> <span class="operator">=</span> <span class="number">0x00</span>;</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ol>
+<ul>
+<li><p>在给数据位赋值好后调用connect_tranport.send()方法，发送给小车</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">send</span><span class="params">()</span> &#123;</span><br><span class="line">    CHECKSUM = (<span class="type">short</span>) ((MAJOR + FIRST + SECOND + THRID) % <span class="number">256</span>);</span><br><span class="line">    <span class="comment">// 发送数据字节数组</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">byte</span>[] sbyte = &#123;<span class="number">0x55</span>, (<span class="type">byte</span>) TYPE, (<span class="type">byte</span>) MAJOR, (<span class="type">byte</span>) FIRST, (<span class="type">byte</span>) SECOND, (<span class="type">byte</span>) THRID, (<span class="type">byte</span>) CHECKSUM, (<span class="type">byte</span>) <span class="number">0xBB</span>&#125;;</span><br><span class="line">    Log.e(<span class="string">&quot;123&quot;</span>, byte2hex(sbyte));</span><br><span class="line">    <span class="keyword">if</span> (XcApplication.isserial == XcApplication.Mode.SOCKET) &#123;</span><br><span class="line">        XcApplication.executorServicetor.execute(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (socket != <span class="literal">null</span> &amp;&amp; !socket.isClosed()) &#123;</span><br><span class="line">                        bOutputStream.write(sbyte, <span class="number">0</span>, sbyte.length);</span><br><span class="line">                        bOutputStream.flush();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (XcApplication.isserial == XcApplication.Mode.SERIAL) &#123;</span><br><span class="line"></span><br><span class="line">        XcApplication.executorServicetor.execute(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    SerialOutputStream.write(sbyte, <span class="number">0</span>, sbyte.length);</span><br><span class="line">                    SerialOutputStream.flush();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (XcApplication.isserial == XcApplication.Mode.USB_SERIAL)</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FirstActivity.sPort.write(sbyte, <span class="number">5000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+<p>​        当然，这只是基本的通信方法，项目中还封装了其他的通信方法，可以自行阅读源码。</p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ol>
+<li><p>android stdio 中Logcat打印调试信息(Log.d)</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Send a &#123;<span class="doctag">@link</span> #DEBUG&#125; log message.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> tag Used to identify the source of a log message.  It usually identifies</span></span><br><span class="line"><span class="comment"> *        the class or activity where the log call occurs.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> msg The message you would like logged.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">d</span><span class="params">(String tag, String msg)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> println_native(LOG_ID_MAIN, DEBUG, tag, msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><p>上面是Log类中的用于输出debug信息的方法，当然它还有其他的重载方法，可以自行阅读Log类的源码学习如何使用。使用此方法进行调试时，是将调试信息输出到Android stdio IDE的Logcat框中(注意：使用此方法调试时，电脑要与Android设备连接)。</p>
+<p><img src="./img/android/photo7.png" alt="image"></p>
+</li>
+</ul>
+</li>
+<li><p>将调试信息打印在app上（使用Toast）</p>
+<ul>
+<li><p>上面的把调试信息打印到日志里面更多的是开发者使用的，使用Toast将信息打印到app的交互页面，更多是用于用户交互时使用，例如，在2022年的竞赛题目中，有把识别的信息打印到屏幕上的要求。</p>
+</li>
+<li><p>但是这也不失为一种调试的手段，因为相比与在logcat中找日志信息，这种方法会更加直接而且，更直观的知道程序运行情况（如在某型方法中打上toast，可以知道程序是否跑到这里）</p>
+</li>
+<li><p>在项目中，已经封装好了工具类，方便开发者使用。</p>
+</li>
+<li><p>值得注意的是构造方法中传入的context参数，也就是上下文参数，这里解释一下在安卓中的Context,在 Android 开发中，Context 是一个表示应用程序环境的对象。它提供了应用程序访问系统服务、资源、应用程序的共享状态以及与应用程序相关联的信息的方法。Context 类是一个抽象类，它有许多子类，其中包括 Activity、Service、Application 等。每个应用程序组件都会绑定到一个 Context 对象上，以便它可以访问应用程序资源和系统服务。</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ToastUtil</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ToastUtil</span><span class="params">(Context context)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.context = context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">ShowToast</span><span class="params">(String msg)</span> &#123;</span><br><span class="line">        <span class="type">Toast</span> <span class="variable">toast</span> <span class="operator">=</span> Toast.makeText(context, msg, Toast.LENGTH_LONG);</span><br><span class="line">        toast.setText(msg);</span><br><span class="line">        toast.show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Context <span class="title function_">getContext</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>在平时使用时，一般传入Activity对象，例如在下面的FirstActivity的onCreate()方法中有toastUtil = new ToastUtil(this);其中this就是FirstActivity对象。构造好了ToastUtil对象就可以方便愉快地使用toast进行调试了（当然，这里只是在FirstActivity活动下，调用ToastUtil里的方法管用，在其他活动下，还是需要构造在其他activity下使用的ToastUtil）。</p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,</span><br><span class="line">                WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br><span class="line"><span class="comment">//        setContentView(R.layout.activity_first1);//  参赛用页面（按照比赛要求设计的页面）</span></span><br><span class="line">        setContentView(R.layout.activity_first1);</span><br><span class="line">        <span class="comment">//initViews();</span></span><br><span class="line">        but_handler = button_handler;  <span class="comment">//用于leftfragment中隐藏的按钮和标题栏中的menu同步</span></span><br><span class="line">        toastUtil = <span class="keyword">new</span> <span class="title class_">ToastUtil</span>(<span class="built_in">this</span>);</span><br><span class="line">        <span class="keyword">if</span> (XcApplication.isserial == XcApplication.Mode.USB_SERIAL) &#123;  <span class="comment">//竞赛平台和a72通过usb转串口通信</span></span><br><span class="line">            mHandler.sendEmptyMessageDelayed(MESSAGE_REFRESH, REFRESH_TIMEOUT_MILLIS); <span class="comment">//启动usb的识别和获取</span></span><br><span class="line">            Transparent.showLoadingMessage(<span class="built_in">this</span>, <span class="string">&quot;加载中&quot;</span>, <span class="literal">false</span>);<span class="comment">//启动旋转效果的对话框，实现usb的识别和获取</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="文档阅读"><a href="#文档阅读" class="headerlink" title="文档阅读"></a>文档阅读</h2><ul>
+<li>文章篇幅有限，作者水平有限，在此项目里涵盖的技术栈较多，读者可以自行查看相关文档进行深入学习</li>
+<li>想项目中原有的识别相关的程序在使用中或许会有一些问题，读者可以阅读opencv的api文档去深入了解，并对程序进行改进。</li>
+</ul>
+<ol>
+<li>android SDK</li>
+<li>opencv Docs</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/05/Git/" class="archive-article-date">
-  	<time datetime="2022-08-05T07:49:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/05/Git/">Git</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">git常用命令</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/02/27/android/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2022/08/05/Git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,9 +417,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
